@@ -17,10 +17,18 @@ func main() {
 	// }
 	cards := newDeck()
 	// cards.print()
-	hand, remainingCards := deal(cards, 5)
 
-	hand.print()
-	remainingCards.print()
+	// hand, remainingCards := deal(cards, 5)
+
+	// hand.print()
+	// remainingCards.print()
+
+	// fmt.Println(cards.toString())
+
+	cards.saveToFile("cards.txt")
+
+	// str := "Hi there!"
+	// fmt.Println([]byte(str))
 
 	// fmt.Println(cards)
 }
