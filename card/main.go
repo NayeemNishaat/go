@@ -15,7 +15,7 @@ func main() {
 	// for i, card := range cards {
 	// 	fmt.Println(i, card)
 	// }
-	// cards := newDeck()
+	cards := newDeck()
 	// cards.print()
 
 	// hand, remainingCards := deal(cards, 5)
@@ -30,7 +30,9 @@ func main() {
 	// str := "Hi there!"
 	// fmt.Println([]byte(str))
 
-	cards := newDeckFromFile("cards.txt")
+	// cards := newDeckFromFile("cards.txt")
+
+	cards.shuffle()
 	cards.print()
 
 }
