@@ -15,7 +15,7 @@ func main() {
 	// for i, card := range cards {
 	// 	fmt.Println(i, card)
 	// }
-	cards := newDeck()
+	// cards := newDeck()
 	// cards.print()
 
 	// hand, remainingCards := deal(cards, 5)
@@ -25,12 +25,14 @@ func main() {
 
 	// fmt.Println(cards.toString())
 
-	cards.saveToFile("cards.txt")
+	// cards.saveToFile("cards.txt")
 
 	// str := "Hi there!"
 	// fmt.Println([]byte(str))
 
-	// fmt.Println(cards)
+	cards := newDeckFromFile("cards.txt")
+	cards.print()
+
 }
 
 // func newCard() string {
