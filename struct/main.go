@@ -74,3 +74,9 @@ type bl bool
 func (b *bl) updtBl() {
 	*b = false
 }
+
+// Part: Value Types
+// int, float, string, bool, struct
+
+// Part: Reference Types
+// slice, map, channel, pointer, function
