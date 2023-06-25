@@ -37,13 +37,20 @@ func main() {
 		},
 	}
 
-	saymon.updateName("Sam")
+	saymonPointer := &saymon
+	saymonPointer.updateName("Sammy")
+
+	// saymon.updateName("Sam")
 	saymon.print()
 }
 
-func (p person) updateName(firstName string) {
-	p.firstName = firstName
+func (pointerToP *person) updateName(firstName string) {
+	(*pointerToP).firstName = firstName
 }
+
+// func (p *person) updateName(firstName string) {
+// 	p.firstName = firstName
+// }
 
 func (p person) print() {
 	fmt.Printf("%+v", p)
