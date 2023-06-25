@@ -42,10 +42,19 @@ func main() {
 
 	saymon.updateName("Sam")
 	saymon.print()
+
+	v := true
+	updateBool(&v)
+	fmt.Println(v)
+
+	b := bl(true)
+	b.updtBl()
+	fmt.Println(b)
 }
 
 func (p *person) updateName(firstName string) {
-	p.firstName = firstName
+	(*p).firstName = firstName
+	// p.firstName = firstName
 }
 
 // func (pointerToP *person) updateName(firstName string) {
@@ -53,5 +62,15 @@ func (p *person) updateName(firstName string) {
 // }
 
 func (p person) print() {
-	fmt.Printf("%+v", p)
+	fmt.Printf("%+v\n", p)
+}
+
+func updateBool(b *bool) {
+	*b = false
+}
+
+type bl bool
+
+func (b *bl) updtBl() {
+	*b = false
 }
