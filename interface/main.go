@@ -4,6 +4,7 @@ import "fmt"
 
 type bot interface {
 	getGreeting() string
+	// doStuff(string, int) (string, error) // Important: Need to define all the methods to qualify as bot
 }
 
 type englishBot struct{}
