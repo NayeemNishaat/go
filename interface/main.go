@@ -16,6 +16,8 @@ func main() {
 
 	printGreeting(eb)
 	printGreeting(sb)
+
+	eb.ebSpecific()
 }
 
 func printGreeting(b bot) {
@@ -30,4 +32,8 @@ func (englishBot) getGreeting() string {
 func (spanishBot) getGreeting() string {
 	// Note: Custome logic for Spanish greeting
 	return "Hola!"
+}
+
+func (englishBot) ebSpecific() {
+	fmt.Println("EB Specific")
 }
