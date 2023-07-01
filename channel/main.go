@@ -24,8 +24,12 @@ func main() {
 	// fmt.Println(<-c)
 	// fmt.Println(<-c)
 
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+	// for i := 0; i < len(links); i++ {
+	// 	fmt.Println(<-c)
+	// }
+
+	for {
+		go checkLink(<-c, c)
 	}
 }
 
@@ -33,11 +37,11 @@ func checkLink(link string, c chan string) {
 	_, err := http.Get(link) // Note: Blocking call
 	if err != nil {
 		fmt.Println(link, "might be down!")
-		c <- link + "Down!"
+		c <- link
 
 		return
 	}
 
 	fmt.Println(link, "is up!")
-	c <- "Up!"
+	c <- link
 }
