@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -28,8 +29,21 @@ func main() {
 	// 	fmt.Println(<-c)
 	// }
 
-	for {
-		go checkLink(<-c, c)
+	// for {
+	// 	go checkLink(<-c, c)
+	// }
+
+	for l := range c { // Note: Watch the channel for a message and as soon as receive a message execute the loop
+		// go checkLink(l, c)
+		// go func() {
+		// 	time.Sleep(5 * time.Second)
+		// 	go checkLink(l, c) // Important: l is referring to the same memory address in subsequent calls
+		// }()
+
+		go func(l string) {
+			time.Sleep(5 * time.Second)
+			go checkLink(l, c)
+		}(l)
 	}
 }
 
